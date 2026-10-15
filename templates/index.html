@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel Bot - Movie Scraper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Animation -->
+    <div class="bg-animation">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-wrapper">
+                <div class="logo-icon">🎬</div>
+                <h1>Angel Bot</h1>
+            </div>
+            <p class="subtitle">Your Movie Magnet & Torrent Scraper</p>
+        </div>
+
+        <!-- Status Badge -->
+        <div class="status-bar" id="statusBar">
+            <span class="status-dot" id="statusDot"></span>
+            <span class="status-text" id="statusText">Ready</span>
+            <span class="movie-count" id="movieCount">0 movies loaded</span>
+        </div>
+
+        <!-- Search Section -->
+        <div class="search-container" id="searchContainer">
+            <div class="search-input-wrapper">
+                <input type="text" id="searchInput" placeholder="🔍 Search for movies..." />
+            </div>
+            <button class="btn-search" id="searchBtn">
+                <span>🔍</span> Search
+            </button>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-results-container" id="searchResultsContainer" style="display: none;">
+            <div class="search-status" id="searchStatus"></div>
+            <div class="search-loading" id="searchLoading" style="display: none;">
+                <div class="loader"></div>
+                <p style="color: rgba(255,255,255,0.5); font-size: 14px;">Searching...</p>
+            </div>
+            <div class="search-results-grid" id="searchResultsGrid">
+                <!-- Search results will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="actions">
+            <button class="btn btn-primary" id="startBtn" onclick="fetchMovies()">
+                <span class="btn-icon">🚀</span>
+                Start
+            </button>
+            <button class="btn btn-secondary" id="viewBtn" onclick="loadMovies()" disabled>
+                <span class="btn-icon">👁️</span>
+                View Movies
+            </button>
+            <button class="btn btn-refresh" onclick="refreshCache()">
+                <span class="btn-icon">🔄</span>
+                Refresh
+            </button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div class="loading-container" id="loadingContainer" style="display: none;">
+            <div class="loader"></div>
+            <p class="loading-text">Fetching movies... Please wait ⏰</p>
+        </div>
+
+        <!-- Movie List -->
+        <div class="movie-list-container" id="movieListContainer" style="display: none;">
+            <div class="movie-header">
+                <h2>🎬 Available Movies</h2>
+                <span class="movie-total" id="movieTotal">0 movies</span>
+            </div>
+            <div class="movie-grid" id="movieGrid">
+                <!-- Movies will be dynamically inserted here -->
+            </div>
+        </div>
+
+        <!-- Movie Details Modal -->
+        <div class="modal" id="movieModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modalTitle">Movie Details</h2>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body" id="modalBody">
+                    <!-- Movie details will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Powered by <a href="https://github.com/SudoR2spr" target="_blank">SudoR2spr</a> | 
+            <a href="https://t.me/Opleech_WD" target="_blank">Opleech_WD</a></p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

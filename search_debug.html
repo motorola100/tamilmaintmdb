@@ -1,0 +1,432 @@
+<!doctype html>
+<html id="focus" lang="en-US" dir="ltr"
+  data-focus-guest
+  data-focus-group-id='2'
+  data-focus-theme-id='32'
+  data-focus-navigation='dropdown'
+  data-focus-bg='1'
+  data-focus-scheme='light'
+  data-focus-cookie='32'
+  data-focus-userlinks='radius sep cta'
+  data-focus-post='margin mobile--no-margin'
+  data-focus-post-header='background border'
+  data-focus-post-controls='text wide'
+  data-focus-blocks='transparent'
+  data-focus-ui="new-badge guest-alert"
+  data-globaltemplate='4.7.12'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search · 1TamilMV</title>
+  <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="icon"          href="assets/img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/framework.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/core.css">
+  <link rel="stylesheet" href="assets/css/core_responsive.css">
+  <link rel="stylesheet" href="assets/css/page.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <style>
+    /* minor overrides for search page */
+    #elSearchPanel { margin-top: 14px; }
+    .sPanel_head { background:#f3f4f6; padding:14px 16px; border-bottom:1px solid rgba(0,0,0,.1);
+                   font-size:13px; font-weight:700; color:#0A2E50; display:flex; align-items:center;
+                   justify-content:space-between; gap:10px; flex-wrap:wrap; }
+    .sPanel_head .count { font-weight:400; color:#6a707d; font-size:12px; }
+    /* Main in-panel search input — full width, premium */
+    .sPanel_search { padding:18px 20px; background:#fff; border-bottom:1px solid #e5e8ee; }
+    .sPanel_search form {
+      display:flex !important; align-items:center; gap:0; position:relative;
+      width:100% !important; max-width:none !important; box-sizing:border-box;
+      background:#fff; border:1px solid #c9d1dc; border-radius:6px;
+      transition:border-color .18s ease, box-shadow .18s ease;
+      overflow:hidden; height:52px;
+      box-shadow:0 1px 2px rgba(0,0,0,.02);
+    }
+    .sPanel_search form:focus-within {
+      border-color:#2986CC;
+      box-shadow:0 0 0 4px rgba(41,134,204,.18), 0 2px 8px rgba(41,134,204,.08);
+    }
+    .sPanel_search .sInputIcon { padding:0 14px 0 18px; color:#8a909b; font-size:17px; }
+    .sPanel_search input[type="search"] {
+      flex:1 1 0 !important; width:100% !important; min-width:0 !important;
+      max-width:none !important; box-sizing:border-box;
+      border:0 !important; outline:0; background:transparent;
+      font-family:inherit; font-size:16px; color:#1a1a1a;
+      padding:14px 6px; height:100%; margin:0;
+      letter-spacing:-.005em; box-shadow:none !important;
+    }
+    .sPanel_search input::placeholder { color:#a4acb8; }
+    .sPanel_search .sClear {
+      background:transparent; border:0; cursor:pointer; color:#8a909b;
+      width:38px; height:38px; margin-right:6px;
+      border-radius:50%; font-size:14px;
+      display:flex; align-items:center; justify-content:center;
+      transition:background .15s ease, color .15s ease;
+    }
+    .sPanel_search .sClear:hover { background:#f0f3f8; color:#0A2E50; }
+    .sPanel_search .sGo {
+      background:linear-gradient(180deg,#3499DA 0%,#1F6FA8 100%);
+      color:#fff; border:0; cursor:pointer;
+      padding:0 30px; height:100%; font-family:inherit;
+      font-size:15px; font-weight:700; letter-spacing:.03em;
+      display:flex; align-items:center; gap:10px;
+      border-left:1px solid rgba(0,0,0,.1);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.22),
+                 inset 0 -1px 0 rgba(0,0,0,.08);
+      transition:all .15s ease; flex-shrink:0;
+    }
+    .sPanel_search .sGo:hover {
+      background:linear-gradient(180deg,#43A8E6 0%,#1265A1 100%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.3),
+                 inset 0 -1px 0 rgba(0,0,0,.1),
+                 0 4px 12px rgba(41,134,204,.28);
+    }
+    .sPanel_search .sGo:active { transform:translateY(1px); }
+    .sPanel_search .sGo i { font-size:14px; opacity:.9; }
+    @media (max-width:600px){
+      .sPanel_search { padding:12px 12px; }
+      .sPanel_search form { height:46px; }
+      .sPanel_search .sInputIcon { padding:0 10px 0 14px; font-size:15px; }
+      .sPanel_search input { font-size:16px; padding:10px 4px; }
+      .sPanel_search .sGo { padding:0 16px; gap:0; font-size:14px; }
+      .sPanel_search .sGo span { display:none; }
+      .sPanel_search .sClear { width:32px; height:32px; margin-right:4px; }
+    }
+
+    /* Pagination */
+    .sPager { display:flex; justify-content:center; align-items:center; gap:4px;
+              padding:16px 12px; flex-wrap:wrap; }
+    .sPager button, .sPager .ell {
+      background:#fff; color:#0A2E50; border:1px solid #d8dde4;
+      padding:6px 12px; min-width:36px; height:34px; border-radius:3px;
+      font-family:inherit; font-size:13px; font-weight:600; cursor:pointer;
+      transition:all .12s ease; display:inline-flex; align-items:center; justify-content:center;
+    }
+    .sPager button:hover:not(:disabled){ background:#f0f3f8; border-color:#2986CC; color:#2986CC; }
+    .sPager button.on { background:#0A2E50; color:#fff; border-color:#0A2E50; cursor:default; }
+    .sPager button:disabled { opacity:.4; cursor:not-allowed; }
+    .sPager .ell { border:0; background:transparent; color:#6a707d; cursor:default; padding:0 4px; }
+    .sPager .nav { min-width:40px; font-size:14px; }
+    @media (max-width:600px){
+      .sPager button, .sPager .ell { padding:6px 8px; min-width:30px; height:32px; font-size:12px; }
+    }
+
+    .sPanel_filters { padding:10px 16px; background:#fafbfd; border-bottom:1px solid #e5e8ee;
+                      display:flex; flex-wrap:wrap; gap:8px; align-items:center; }
+    .sChip { display:inline-flex; align-items:center; gap:6px; background:#fff;
+             border:1px solid #d8dde4; color:#1a1a1a; padding:5px 12px; border-radius:3px;
+             font-size:12px; font-weight:600; cursor:pointer; transition:all .15s ease;
+             font-family:inherit; }
+    .sChip:hover { background:#f0f3f8; border-color:#c2c8d0; }
+    .sChip.on { background:#0A2E50; color:#fff; border-color:#0A2E50; }
+    .sChip.on.gold { background:#ed7a16; border-color:#ed7a16; }
+    .sChip.on.green { background:#2aad55; border-color:#2aad55; }
+    .sChip .d { width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.7; }
+    .sSort { margin-left:auto; display:flex; align-items:center; gap:6px; color:#8a909b;
+             font-size:11px; text-transform:uppercase; letter-spacing:.05em; }
+    .sSort select { background:#fff; color:#1a1a1a; border:1px solid #d8dde4; border-radius:3px;
+                    padding:5px 26px 5px 10px; font-size:12px; font-family:inherit; cursor:pointer;
+                    appearance:none; -webkit-appearance:none;
+                    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'><path d='M2.5 3.5l2.5 2.5 2.5-2.5' stroke='%236a707d' stroke-width='1.2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+                    background-repeat:no-repeat; background-position:right 8px center; }
+    a.sRow,
+    a.sRow:link,
+    a.sRow:visited,
+    a.sRow:hover,
+    a.sRow:focus,
+    a.sRow:active,
+    a.sRow .sTitle,
+    a.sRow:hover .sTitle { text-decoration:none !important; }
+
+    .sRow { display:flex; align-items:center; gap:12px; padding:12px 16px;
+            border-bottom:1px solid #eef1f4; transition:background .12s ease; cursor:pointer;
+            animation:sFade .3s ease backwards;
+            color:inherit; }
+    .sRow:last-child { border-bottom:0; }
+    .sRow:hover { background:#f7f9fc; color:inherit; }
+    .sRow:focus-visible { outline:2px solid #2986CC; outline-offset:-2px; }
+    .sRow:hover .sTitle { color:#2986CC; }
+    .sRow.prio { background:#f4f8fc; box-shadow:inset 3px 0 0 #2986CC; }
+    .sRow.prio:hover { background:#e9f0f7; }
+    .sRow .sIcon { flex-shrink:0; width:36px; height:36px; border-radius:3px;
+                   background:linear-gradient(135deg,#2986CC,#1265A1); color:#fff;
+                   display:flex; align-items:center; justify-content:center; font-size:16px;
+                   font-weight:700; text-transform:uppercase; }
+    .sRow.prio .sIcon { background:linear-gradient(135deg,#f4b041,#ed7a16); }
+    .sRow .sMain { flex:1; min-width:0; }
+    .sRow .sTitle { display:block; font-size:14px; font-weight:600; color:#0A2E50;
+                    line-height:1.4; word-break:break-word; text-decoration:none; }
+    .sRow .sTitle:hover { color:#2986CC; text-decoration:underline; }
+    .sRow .sMeta { margin-top:3px; font-size:12px; color:#6a707d;
+                   display:flex; flex-wrap:wrap; gap:4px 10px; align-items:center; }
+    .sRow .sMeta .who { color:#0A2E50; font-weight:600; }
+    .sRow .sMeta .sep { opacity:.4; }
+    .sBadge { display:inline-flex; align-items:center; gap:4px; font-size:10px;
+              letter-spacing:.04em; text-transform:uppercase; font-weight:700;
+              padding:2px 7px; border-radius:3px; line-height:1.6; margin-left:6px; }
+    .sBadge.nnew { background:#ed7a16; color:#fff; }
+    .sBadge.prio { background:#f4c065; color:#5a3d0e; }
+    .sBadge.direct { background:#6B5B95; color:#fff;
+                     box-shadow:0 1px 2px rgba(107,91,149,.30); }
+    .sBadge.direct i { font-size:9px; opacity:.9; margin-right:2px; }
+    .sBadge.frm { background:#f3f4f6; color:#6a707d; border:1px solid #d8dde4; }
+    .sRow .sStats { flex-shrink:0; display:flex; gap:14px; text-align:center;
+                    color:#6a707d; font-size:12px; padding:0 4px; }
+    .sRow .sStats .s { display:flex; flex-direction:column; gap:2px; min-width:52px; }
+    .sRow .sStats .n { color:#0A2E50; font-weight:700; font-size:14px; line-height:1;
+                       font-variant-numeric:tabular-nums; }
+    .sRow .sStats .l { font-size:10px; letter-spacing:.06em; text-transform:uppercase; color:#8a909b; }
+    .sRow .sLast { flex-shrink:0; min-width:120px; max-width:180px; font-size:12px;
+                   color:#6a707d; text-align:right; border-left:1px solid #eef1f4; padding-left:12px; }
+    .sRow .sLast .who { color:#0A2E50; font-weight:600; }
+    .sRow .sLast .when { display:block; margin-top:2px; font-size:11px; color:#8a909b; }
+    .sEmpty { text-align:center; padding:40px 20px; color:#6a707d; }
+    .sEmpty h3 { color:#0A2E50; font-size:18px; margin:0 0 6px; font-weight:700; }
+    .sEmpty p { margin:0; }
+    .sFoot { padding:10px 16px; background:#fafbfd; border-top:1px solid #eef1f4;
+             font-size:12px; color:#6a707d; display:flex; justify-content:space-between;
+             gap:10px; flex-wrap:wrap; align-items:center; }
+    .sFoot strong { color:#1a1a1a; font-weight:700; font-variant-numeric:tabular-nums; }
+    .sSpinner { display:inline-block; width:14px; height:14px; border-radius:50%;
+                border:2px solid #c2c8d0; border-top-color:#2986CC;
+                animation:sSpin .7s linear infinite; vertical-align:-2px; margin-right:8px; }
+    mark.hl { background:#fff3c0; padding:0 2px; border-radius:2px; }
+    @keyframes sSpin { to { transform:rotate(360deg) } }
+    @keyframes sFade { from { opacity:0; transform:translateY(2px) } to { opacity:1; transform:none } }
+
+    @media (max-width:820px){
+      .sRow .sLast { display:none; }
+      .sRow .sStats { gap:10px; }
+      .sRow .sStats .s { min-width:44px; }
+    }
+    @media (max-width:600px){
+      .sRow { flex-wrap:wrap; gap:10px; padding:10px 12px; }
+      .sRow .sIcon { width:30px; height:30px; font-size:13px; }
+      .sRow .sStats { order:3; width:100%; justify-content:flex-start; padding:0; gap:18px; }
+      .sRow .sTitle { font-size:13px; }
+      .sSort { margin-left:0; width:100%; justify-content:flex-end; order:10; margin-top:4px; }
+    }
+
+    /* basic dropdown behaviour for the nav (site uses JS; we do it with CSS-hover) */
+    .ipsNavBar_primary > ul > li:hover > .ipsNavBar_secondary { display:block; position:absolute; }
+    .ipsMenu.dropdown-open { display:block !important; opacity:1 !important; visibility:visible !important; }
+
+    /* hide the full-page ad container that the original site has */
+    .ad-hidden-here { display:none; }
+  </style>
+</head>
+<body class='ipsApp ipsApp_front ipsJS_has ipsClearfix'
+      data-controller='core.front.core.app'
+      data-pageApp='cms' data-pageLocation='front'
+      data-pageModule='pages' data-pageController='page' data-pageName='search.html'>
+
+<div id='ipsLayout_wrapper'>
+
+  <!-- =========== Header (exact IPS markup) =========== -->
+  <div id='ipsLayout_header' class='focus-sticky-header'>
+    <header class='focus-header'>
+      <div class='ipsLayout_container'>
+        <div class='focus-header-align'>
+
+          <a class='focus-logo' href='https://www.1tamilmv.meme/' accesskey='1'>
+            <span class='focus-logo__image'>
+              <img src="assets/img/logo.png" alt='1TamilMV'>
+            </span>
+          </a>
+
+          <div class='focus-user'>
+            <ul id='elUserNav' class='ipsList_inline cSignedOut ipsResponsive_showDesktop'>
+              <li id='elSignInLink'>
+                <a href='https://www.1tamilmv.meme/index.php?/login/' id='elUserSignIn'>
+                  Existing user? Sign In &nbsp;<i class='fa fa-caret-down'></i>
+                </a>
+              </li>
+              <li class='elUserNav_sep'></li>
+              <li class='cUserNav_icon ipsJS_show'>
+                <a href='#' title='Editor toggle'>
+                  <i class='fa fa-toggle-on'></i>
+                </a>
+              </li>
+              <li class='cUserNav_icon ipsJS_show'>
+                <a href='#' title='Theme'>
+                  <i class='fa'></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- =========== Primary Navigation (IPS markup) =========== -->
+  <div class='ipsResponsive_showDesktop focus-nav-bar-background'>
+    <div class='focus-nav-bar ipsLayout_container'>
+      <div class='ipsLayout_container ipsFlex ipsFlex-jc:between ipsFlex-ai:center'>
+
+        <div class='focus-nav'>
+          <nav class='ipsResponsive_showDesktop'>
+            <div class='ipsNavBar_primary ipsLayout_container'>
+              <ul data-role="primaryNavBar" class='ipsClearfix'>
+                <li data-role="navBarItem">
+                  <a href="https://www.1tamilmv.meme/"><i class="fa fa-bars" aria-hidden="true"></i> Browse</a>
+                </li>
+                <li data-role="navBarItem">
+                  <a href="https://www.1tamilmv.meme/index.php?/forums/"><i class="fa fa-file-o" aria-hidden="true"></i> Movies <i class='fa fa-caret-down'></i></a>
+                </li>
+                <li data-role="navBarItem">
+                  <a href="https://www.1tamilmv.meme/index.php?/forums/"><i class="fa fa-file-o" aria-hidden="true"></i> Members Lounge <i class='fa fa-caret-down'></i></a>
+                </li>
+                <li data-role="navBarItem">
+                  <a href="https://www.1tamilmv.meme/index.php?/forums/"><i class="fa fa-file-o" aria-hidden="true"></i> Languages</a>
+                </li>
+                <li data-role="navBarItem">
+                  <a href="https://www.1tamilmv.meme/index.php?/forums/"><i class="fa fa-file-o" aria-hidden="true"></i> Watch Online</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- =========== Content area =========== -->
+  <div id='ipsLayout_body' class='ipsLayout_container'>
+
+    <div class='focus-precontent'>
+      <div class='focus-breadcrumb'>
+        <nav class='ipsBreadcrumb ipsBreadcrumb_top ipsFaded_withHover'>
+          <ul class='ipsList_inline ipsPos_right'>
+            <li>
+              <a class='ipsType_light' href='https://www.1tamilmv.meme/index.php?/discover/'>
+                <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>All Activity</span>
+              </a>
+            </li>
+          </ul>
+          <ul data-role="breadcrumbList">
+            <li><a title="Home" href='https://www.1tamilmv.meme/'><span>Home</span></a></li>
+            <li><span>Search</span></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div id='ipsLayout_contentArea'>
+      <div class='ipsBox' id='elSearchPanel'>
+
+        <div class='sPanel_head'>
+          <div>
+            <i class='fa fa-search' aria-hidden="true"></i> &nbsp; Search Topics
+          </div>
+          <div class='count' id='countLabel'>Ready when you are.</div>
+        </div>
+
+        <!-- Main search input: the prominent box inside the panel -->
+        <div class='sPanel_search'>
+          <form id='mainSearchForm' role='search' autocomplete='off' onsubmit='return false;' style='width:100%;max-width:none;flex:1 1 100%;'>
+            <i class='fa fa-search sInputIcon' aria-hidden='true'></i>
+            <input type='search' id='elSearchField'
+                   placeholder='Search topics… e.g. Dragon, Vikram, Youth, Master'
+                   aria-label='Search topics' autocomplete='off'>
+            <button type='button' class='sClear' id='sClearBtn' aria-label='Clear'
+                    style='display:none'><i class='fa fa-times'></i></button>
+            <button type='submit' class='sGo'><i class='fa fa-search'></i><span>Search</span></button>
+          </form>
+        </div>
+
+        <div class='sPanel_filters'>
+          <button class='sChip green' id='directBtn' type='button'><span class='d'></span>Direct Link</button>
+          <div class='sSort'>
+            <span>Sort</span>
+            <select id='sortSel'>
+              <option value="date_desc">Newest first</option>
+              <option value="date_asc">Oldest first</option>
+              <option value="views_desc">Most viewed</option>
+              <option value="views_asc">Least viewed</option>
+              <option value="posts_desc">Most replies</option>
+              <option value="posts_asc">Fewest replies</option>
+              <option value="title_asc" selected>Title A→Z</option>
+            </select>
+          </div>
+        </div>
+
+        <div id='results'></div>
+
+        <div id='pager' class='sPager' hidden></div>
+
+        <div class='sFoot'>
+          <span id='metaLeft'>Type a word or toggle a filter.</span>
+          <span id='metaRight'></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =========== Bottom breadcrumb =========== -->
+  <div class='ipsLayout_container'>
+    <nav class='ipsBreadcrumb ipsBreadcrumb_bottom ipsFaded_withHover'>
+      <ul class='ipsList_inline ipsPos_right'>
+        <li>
+          <a class='ipsType_light' href='https://www.1tamilmv.meme/index.php?/discover/'>
+            <i class="fa fa-newspaper-o" aria-hidden="true"></i> <span>All Activity</span>
+          </a>
+        </li>
+      </ul>
+      <ul data-role="breadcrumbList">
+        <li><a title="Home" href='https://www.1tamilmv.meme/'><span>Home</span></a></li>
+        <li><span>Search</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- =========== Footer (exact IPS markup) =========== -->
+  <footer id='ipsLayout_footer' class='ipsClearfix'>
+    <div class='ipsLayout_container'>
+
+      <ul class='ipsList_inline ipsType_center ipsSpacer_top' id='elFooterLinks'>
+        <li><a rel="nofollow" href='https://www.1tamilmv.meme/index.php?/contact/'>Contact Us</a></li>
+        <li><a rel="nofollow" href='https://www.1tamilmv.meme/index.php?/cookies/'>Cookies</a></li>
+      </ul>
+
+      <ul class='focus-social focus-social--iconOnly'>
+        <li>
+          <a href='https://t.me/tmvog' target="_blank" rel="noopener">
+            <span>Telegram</span>
+          </a>
+        </li>
+      </ul>
+
+      <p id='elCopyright'>
+        <span id='elCopyright_userLine'>Copyright © 2016-2025. All Rights Reserved.</span>
+      </p>
+
+    </div>
+  </footer>
+
+</div>
+
+<!-- Detail dialog -->
+<dialog id="detail" style="margin:auto;border:1px solid #d8dde4;border-radius:4px;background:#fff;color:#1a1a1a;padding:0;max-width:520px;width:92%;box-shadow:0 10px 30px rgba(0,0,0,.2);">
+  <div style="background:#f3f4f6;padding:14px 20px;border-bottom:1px solid #d8dde4;color:#0A2E50;font-weight:700;font-size:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;">
+    <span id="detailTitle"></span>
+    <button onclick="document.getElementById('detail').close()" aria-label="Close" style="background:transparent;border:0;color:#6a707d;font-size:20px;cursor:pointer;line-height:1;padding:0 4px;">×</button>
+  </div>
+  <div style="padding:16px 20px;font-size:13px;">
+    <dl id="detailBody" style="display:grid;grid-template-columns:110px 1fr;gap:8px 14px;margin:0;"></dl>
+  </div>
+</dialog>
+
+<script src="assets/js/search.js?v=1776518562" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"a51bc10855a04daf9820a9babbf914ac","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
